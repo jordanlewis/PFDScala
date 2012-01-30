@@ -1,4 +1,4 @@
-package org.jordanlewis.PFDScala
+package org.jordanlewis.pfds
 
 object CustomStack {
   def apply[T] : CustomStack[T] = new CustomStack[T](NIL)

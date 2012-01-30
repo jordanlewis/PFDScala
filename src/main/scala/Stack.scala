@@ -1,4 +1,4 @@
-package org.jordanlewis.PFDScala
+package org.jordanlewis.pfds
 
 trait Stack[+T] {
   def isEmpty : Boolean

@@ -1,4 +1,4 @@
-package org.jordanlewis.PFDScala
+package org.jordanlewis.pfds
 
 object ListStack {
   def apply[T] : ListStack[T] = new ListStack[T](List())

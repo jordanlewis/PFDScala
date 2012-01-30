@@ -1,9 +1,5 @@
 package org.jordanlewis.PFDScala
 
-private sealed abstract class LIST[+T]
-private case object NIL extends LIST[Nothing]
-private final case class CONS[T](head: T, tail: LIST[T]) extends LIST[T]
-
 object CustomStack {
   def apply[T] : CustomStack[T] = new CustomStack[T](NIL)
 }

@@ -1,6 +1,6 @@
 package org.jordanlewis.pfds
 
-sealed abstract class CustomStack[+T]
+sealed abstract class CustomStack[+T] extends Stack[T]
 case object EmptyCustomStack extends CustomStack[Nothing] {
   def isEmpty = true
   def cons[T](x: T) = new NonEmptyCustomStack[T](x, EmptyCustomStack)

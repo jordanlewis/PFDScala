@@ -5,9 +5,9 @@ object ListStack {
 }
 
 class ListStack[T] private (val l: List[T]) extends Stack[T] {
-  def isEmpty : Boolean = l.isEmpty
+  def isEmpty = l.isEmpty
 
-  def cons[U >: T](x: U) : Stack[U] = new ListStack(x::l)
-  def head : T = l.head
-  def tail : Stack[T] = new ListStack(l.tail)
+  def cons[U >: T](x: U) = new ListStack(x::l)
+  def head = l.head
+  def tail = new ListStack(l.tail)
 }

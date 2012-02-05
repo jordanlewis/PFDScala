@@ -1,24 +1,24 @@
 package org.jordanlewis.pfds
 
 object UnbalancedSet {
-  def empty[T <% Ordered[T]]() = new EmptyUnbalancedSet[T]
+  def apply[T <% Ordered[T]]() = EmptyUnbalancedSet[T]
 }
 
 sealed abstract class UnbalancedSet[T <% Ordered[T]] extends Set[T] {
-  def insert(x: T): UnbalancedSet[T] = new NonEmptyUnbalancedSet[T](new EmptyUnbalancedSet[T], x, EmptyUnbalancedSet[T])
+  def insert(x: T): UnbalancedSet[T] = NonEmptyUnbalancedSet[T](UnbalancedSet[T], x, UnbalancedSet[T])
   def member(x: T): Boolean
 }
 
-case class EmptyUnbalancedSet[T <% Ordered[T]] extends UnbalancedSet[T] {
-  override def insert(x: T) = new NonEmptyUnbalancedSet[T](new EmptyUnbalancedSet[T], x, new EmptyUnbalancedSet[T])
-  override def member(x: T) = false
+final case class EmptyUnbalancedSet[T <% Ordered[T]]() extends UnbalancedSet[T] {
+  override def insert(x: T) = NonEmptyUnbalancedSet(UnbalancedSet[T], x, UnbalancedSet[T])
+  def member(x: T) = false
 }
 
 final case class NonEmptyUnbalancedSet[T <% Ordered[T]]
     (left: UnbalancedSet[T], value: T, right: UnbalancedSet[T]) extends UnbalancedSet[T] {
   override def insert(x: T) =
-    if      (x < value) new NonEmptyUnbalancedSet(left insert x, value, right)
-    else if (x > value) new NonEmptyUnbalancedSet(left, value, right insert x)
+    if      (x < value) NonEmptyUnbalancedSet(left insert x, value, right)
+    else if (x > value) NonEmptyUnbalancedSet(left, value, right insert x)
     else this
   override def member(x: T) =
     if      (x < value) left member x

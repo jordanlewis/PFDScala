@@ -7,7 +7,7 @@ import org.junit.runner.RunWith
 import org.jordanlewis.pfds.UnbalancedTreeSet
 
 @RunWith(classOf[JUnitRunner])
-class UnbalancedSetTest extends Spec with ShouldMatchers {
+class UnbalancedTreeSetTest extends Spec with ShouldMatchers {
   describe("An unbalanced set") {
     it("should contain elements that have been inserted") {
       val set = new UnbalancedTreeSet[Int].insert(3).insert(5).insert(2)

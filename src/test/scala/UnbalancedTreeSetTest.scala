@@ -1,10 +1,9 @@
-package org.jordanlewis.PFDScala
+package org.jordanlewis.pfds
 
 import org.scalatest.matchers.ShouldMatchers
 import org.scalatest.Spec
 import org.scalatest.junit.JUnitRunner
 import org.junit.runner.RunWith
-import org.jordanlewis.pfds.UnbalancedTreeSet
 
 @RunWith(classOf[JUnitRunner])
 class UnbalancedTreeSetTest extends Spec with ShouldMatchers {

@@ -2,7 +2,6 @@ package org.jordanlewis.pfds
 
 import org.scalatest.matchers.ShouldMatchers
 import org.scalatest.Spec
-import org.scalatest.junit.JUnitRunner
 
 class UnbalancedTreeSetTest extends Spec with ShouldMatchers {
   describe("An unbalanced set") {

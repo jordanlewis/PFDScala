@@ -3,9 +3,7 @@ package org.jordanlewis.pfds
 import org.scalatest.matchers.ShouldMatchers
 import org.scalatest.Spec
 import org.scalatest.junit.JUnitRunner
-import org.junit.runner.RunWith
 
-@RunWith(classOf[JUnitRunner])
 class UnbalancedTreeSetTest extends Spec with ShouldMatchers {
   describe("An unbalanced set") {
     it("should contain elements that have been inserted") {
